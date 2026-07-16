@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spot On Trafik – Skriv en anmeldelse</title>
+  <style>
+    :root {
+      --bg: #0d0f14;
+      --card-bg: #161b24;
+      --card-border: #1e2a3a;
+      --accent: #f5a623;
+      --accent-dark: #c27d00;
+      --text: #e8eaf0;
+      --muted: #8892a4;
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 32px 16px 48px;
+    }
+
+    /* ── Header ── */
+    .logo-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .logo-icon {
+      width: 68px;
+      height: 68px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+    }
+
+    h1 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      text-align: center;
+    }
+
+    h1 span { color: var(--accent); }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 0.95rem;
+      text-align: center;
+      margin-bottom: 36px;
+      max-width: 340px;
+      line-height: 1.5;
+    }
+
+    /* ── Grid ── */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 900px;
+    }
+
+    /* ── Card ── */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 36px rgba(0,0,0,0.5);
+      border-color: var(--accent);
+    }
+
+    .card-image {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+      display: block;
+      background: #1a2030;
+      position: relative;
+    }
+
+    /* Placeholder gradient when no image */
+    .card-image-placeholder {
+      width: 100%;
+      height: 170px;
+      background: linear-gradient(135deg, #1a2030 0%, #0d1522 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 42px;
+      color: var(--accent);
+    }
+
+    .card-body {
+      padding: 18px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .card-city {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+
+    .card-address {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .card-btn {
+      margin-top: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #0d0f14;
+      font-weight: 700;
+      font-size: 0.88rem;
+      border-radius: 50px;
+      padding: 10px 18px;
+      width: fit-content;
+      transition: background 0.15s;
+    }
+
+    .card:hover .card-btn {
+      background: #ffb84d;
+    }
+
+    .star-icon { font-size: 1rem; }
+
+    /* ── Footer ── */
+    footer {
+      margin-top: 48px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    footer a { color: var(--accent); text-decoration: none; }
+
+    /* ── Responsive ── */
+    @media (max-width: 480px) {
+      h1 { font-size: 1.4rem; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logo-wrap">
+    <div class="logo-icon">🚗</div>
+    <h1>Spot <span>On</span> Trafik</h1>
+  </div>
+
+  <p class="subtitle">
+    Vælg din afdeling herunder og hjælp os med en Google-anmeldelse. Det tager kun 1 minut! ⭐
+  </p>
+
+  <div class="grid">
+
+    <!-- ── NÆSTVED ── -->
+    <!-- REPLACE placeid= with actual Google Place ID for this location -->
+    <!-- Direct review link: https://search.google.com/local/writereview?placeid=PLACE_ID_NAESTVED -->
+    <a class="card"
+       href="https://www.google.com/maps/search/?api=1&query=Spot+On+Trafik+N%C3%A6stved"
+       target="_blank" rel="noopener">
+      <div class="card-image-placeholder">📍</div>
+      <!-- When you have a photo, replace the div above with:
+           <img class="card-image" src="naestved.jpg" alt="Næstved afdeling" loading="lazy"> -->
+      <div class="card-body">
+        <div class="card-city">Næstved</div>
+        <div class="card-address">Fabriksvej 48A, 4700 Næstved</div>
+        <div class="card-btn">
+          <span class="star-icon">⭐</span> Skriv en anmeldelse
+        </div>
+      </div>
+    </a>
+
+    <!-- ── NYKØBING F ── -->
+    <a class="card"
+       href="https://www.google.com/maps/search/?api=1&query=Spot+On+Trafik+Nyk%C3%B8bing+Falster"
+       target="_blank" rel="noopener">
+      <div class="card-image-placeholder">📍</div>
+      <div class="card-body">
+        <div class="card-city">Nykøbing F</div>
+        <div class="card-address">Nykøbing Falster</div>
+        <div class="card-btn">
+          <span class="star-icon">⭐</span> Skriv en anmeldelse
+        </div>
+      </div>
+    </a>
+
+    <!-- ── HASLEV ── -->
+    <a class="card"
+       href="https://www.google.com/maps/search/?api=1&query=Spot+On+Trafik+Haslev"
+       target="_blank" rel="noopener">
+      <div class="card-image-placeholder">📍</div>
+      <div class="card-body">
+        <div class="card-city">Haslev</div>
+        <div class="card-address">Jernbanegade 42D, 4690 Haslev</div>
+        <div class="card-btn">
+          <span class="star-icon">⭐</span> Skriv en anmeldelse
+        </div>
+      </div>
+    </a>
+
+    <!-- ── SLAGELSE ── -->
+    <a class="card"
+       href="https://www.google.com/maps/search/?api=1&query=Spot+On+Trafik+Slagelse"
+       target="_blank" rel="noopener">
+      <div class="card-image-placeholder">📍</div>
+      <div class="card-body">
+        <div class="card-city">Slagelse</div>
+        <div class="card-address">Løvegade 5A st. th., 4200 Slagelse</div>
+        <div class="card-btn">
+          <span class="star-icon">⭐</span> Skriv en anmeldelse
+        </div>
+      </div>
+    </a>
+
+    <!-- ── BORNHOLM ── -->
+    <a class="card"
+       href="https://www.google.com/maps/search/?api=1&query=Spot+On+Trafik+Bornholm"
+       target="_blank" rel="noopener">
+      <div class="card-image-placeholder">📍</div>
+      <div class="card-body">
+        <div class="card-city">Bornholm</div>
+        <div class="card-address">Bornholm</div>
+        <div class="card-btn">
+          <span class="star-icon">⭐</span> Skriv en anmeldelse
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <footer>
+    <p>© Spot On Trafik · <a href="https://spotontrafik.dk" target="_blank">spotontrafik.dk</a></p>
+    <p style="margin-top:4px;">Den fedeste køreskole på Sjælland, Falster og Bornholm 🏆</p>
+  </footer>
+
+</body>
+</html>
